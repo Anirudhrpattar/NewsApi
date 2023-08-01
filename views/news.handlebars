@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Today's News</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #000000;
+            color: white;
+            padding: 10px;
+            margin-top: 0;
+        }
+
+        h2 {
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        button {
+            border: none;
+            border-radius: 4px;
+            background-color: black;
+            color: white;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            text-decoration: underline;
+        }
+
+        .article {
+            margin-bottom: 30px;
+        }
+
+        hr {
+            margin: 20px 0;
+            border: 0;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Top News Headlines</h1>
+        <hr />
+        {{#each articles}}
+        <div class="article">
+        <h2>{{this.title}}</h2>
+        <p>{{this.description}}</p>
+        <button><a href="{{this.url}}" target="_blank">Read More</a></button>
+        <p>Published At: {{this.publishedAt}}</p>
+        <p>Source: {{this.source.name}}</p>
+        <hr>
+        </div>
+        {{/each}}
+    </div>
+</body>
+
+</html>
